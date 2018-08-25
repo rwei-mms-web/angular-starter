@@ -1,0 +1,85 @@
+<h1 class="mat-h1">Flex Layout Demo</h1>
+<mat-card class="card-demo">
+  <mat-card-title>Responsive Layout Directions</mat-card-title>
+  <mat-card-subtitle>Layout direction changes to 'column' for 'xs' or 'sm' viewport sizes:
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div class="containerX">
+      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="coloredContainerX box">
+        <div fxFlex> I'm above on mobile, and to the left on larger devices.</div>
+        <div fxFlex> I'm below on mobile, and to the right on larger devices.</div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card-demo">
+  <mat-card-title>
+    Layout Gap
+  </mat-card-title>
+  <mat-card-subtitle>Using 'fxLayoutGap' to create a grid-like layout
+  </mat-card-subtitle>
+  <mat-card-content class="large">
+    <div fxFlexFill>
+      <div fxFlexFill [fxLayout]="direction + ' wrap'" fxLayoutGap="10px grid" style="cursor: pointer;">
+        <div fxFlex="25">
+          <div class="one" fxFlexFill fxLayoutAlign="center center">
+            A
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="two" fxFlexFill fxLayoutAlign="center center">
+            B
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="three" fxFlexFill fxLayoutAlign="center center">
+            C
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="four" fxFlexFill fxLayoutAlign="center center">
+            D
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="five" fxFlexFill fxLayoutAlign="center center">
+            E
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="six" fxFlexFill fxLayoutAlign="center center">
+            F
+          </div>
+        </div>
+        <div fxFlex="25">
+          <div class="seven" fxFlexFill fxLayoutAlign="center center">
+            G
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="bottomPad">
+    <div class="hint"></div>
+  </mat-card-footer>
+</mat-card>
+
+<mat-card class="card-demo">
+  <mat-card-title>
+    Layout Fill
+  </mat-card-title>
+  <mat-card-subtitle>Using 'fxFill' to fill available width and height of parent container.
+  </mat-card-subtitle>
+  <mat-card-content class="large">
+    <div fxLayout="column" fxFill>
+      <div fxLayout fxFlex>
+        <div class="one" fxFlex="20" fxLayoutAlign="center center"> A</div>
+        <div class="two" fxFlex="80" fxLayoutAlign="center center"> B</div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="bottomPad">
+    <div class="hint"></div>
+  </mat-card-footer>
+</mat-card>

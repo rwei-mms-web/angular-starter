@@ -1,0 +1,30 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+a.header-title {
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.header-logo {
+  height: 20px;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+}
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
+mat-nav-list .label {
+  margin-left: 15px;
+}
+
+.main-content {
+  padding: 15px;
+}

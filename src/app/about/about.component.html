@@ -1,0 +1,50 @@
+<h1 class="mat-h1">About</h1>
+<h2 class="mat-h2">Card</h2>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<h2 class="mat-h2">Bottom Sheet</h2>
+<button mat-raised-button (click)="openBottomSheet()">Open file</button>
+
+<h2 class="mat-h2">Dialog</h2>
+<ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose:
+    <i>{{animal}}</i>
+  </li>
+</ol>
+
+<h2 class="mat-h2">Typography</h2>
+<h1 class="mat-display-1">Jackdaws love my big sphinx of quartz.</h1>
+<h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
+
+<h1>This header is unstyled</h1>
+
+<!-- Applying the mat-tyography class adds styles for native elements. -->
+<section class="mat-typography">
+  <h1>This header will be styled</h1>
+</section>
