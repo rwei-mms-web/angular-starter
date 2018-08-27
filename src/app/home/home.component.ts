@@ -10,8 +10,8 @@ import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/l
 export class HomeComponent implements OnInit {
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
+    map((e) => {
+      if (e.matches) {
         return [
           { title: 'Card 1', cols: 1, rows: 1 },
           { title: 'Card 2', cols: 1, rows: 1 },

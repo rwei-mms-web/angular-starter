@@ -1,13 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-mat-components',
+  templateUrl: './mat-components.component.html',
+  styleUrls: ['./mat-components.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class MatComponentsComponent implements OnInit {
 
   animal: string;
   name: string;
@@ -28,7 +27,6 @@ export class AboutComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.animal = result;
     });
   }

@@ -1,14 +1,15 @@
-<h1 class="mat-h1">Flex Layout Demo</h1>
+<h1 class="mat-h1">Angular Flex Layout</h1>
+<p>
+  <a href="https://tburleson-layouts-demos.firebaseapp.com/#/docs">Learn more about Angular Flex Layout </a>
+</p>
 <mat-card class="card-demo">
   <mat-card-title>Responsive Layout Directions</mat-card-title>
   <mat-card-subtitle>Layout direction changes to 'column' for 'xs' or 'sm' viewport sizes:
   </mat-card-subtitle>
   <mat-card-content>
-    <div class="containerX">
-      <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="coloredContainerX box">
-        <div fxFlex> I'm above on mobile, and to the left on larger devices.</div>
-        <div fxFlex> I'm below on mobile, and to the right on larger devices.</div>
-      </div>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" class="coloredContainerX">
+      <div fxFlex="2 2 auto" fxFlex.lt-sm="1 1 auto"> Main Content, 66% on large, 50% on mobile</div>
+      <div fxFlex="1 1 auto"> Right Rail, 33% on large, 50% on mobile</div>
     </div>
   </mat-card-content>
 </mat-card>

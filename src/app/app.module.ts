@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,37 +12,34 @@ import {
 
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component';
-import { MyBottomSheetComponent, AboutComponent, MyDialogComponent } from './about/about.component';
+import { MyBottomSheetComponent, MatComponentsComponent, MyDialogComponent } from './mat-components/mat-components.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
+import { AuthService } from './services/auth.service';
+import { routing } from './app.routing';
+import { LoginRequiredComponent } from './login-required/login-required.component';
+import { AuthGuard } from './guards/auth.guard';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'table', component: TableComponent },
-  { path: 'flex-layout', component: FlexLayoutComponent },
-  { path: '**', component: HomeComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    AboutComponent,
+    MatComponentsComponent,
     HomeComponent,
     LoginComponent,
     FlexLayoutComponent,
     MyBottomSheetComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    LoginRequiredComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    routing,
     BrowserModule,
+    HttpClientModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -65,7 +63,7 @@ const appRoutes: Routes = [
     MatInputModule
   ],
   entryComponents: [MyBottomSheetComponent, MyDialogComponent],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

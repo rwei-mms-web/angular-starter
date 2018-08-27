@@ -5,9 +5,9 @@
         <mat-icon>home</mat-icon>
         <span class="label">Home</span>
       </a>
-      <a mat-list-item routerLink="about">
+      <a mat-list-item routerLink="components">
         <mat-icon>info</mat-icon>
-        <span class="label">About</span>
+        <span class="label">Material Components</span>
       </a>
       <a mat-list-item routerLink="table">
         <mat-icon>grid_on</mat-icon>
@@ -17,24 +17,28 @@
         <mat-icon>apps</mat-icon>
         <span class="label">Flex Layout</span>
       </a>
+      <a mat-list-item routerLink="login-required">
+        <mat-icon>account_circle</mat-icon>
+        <span class="label">Protected Page</span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" mat-icon-button (click)="sidenav.toggle()" *ngIf="isHandset$ | async">
+      <button type="button" mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
       <a class="header-title">
         <img class="header-logo" src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg">{{title}}
       </a>
-      <div fxFlex fxLayout fxHide.xs>
+      <div fxFlex fxLayout fxHide.lt-md>
         <a mat-button routerLink="home">
           <mat-icon>home</mat-icon>
           Home
         </a>
-        <a mat-button routerLink="about">
+        <a mat-button routerLink="components">
           <mat-icon>info</mat-icon>
-          About
+          Material Components
         </a>
         <a mat-button routerLink="table">
           <mat-icon>grid_on</mat-icon>
@@ -44,11 +48,15 @@
           <mat-icon>apps</mat-icon>
           Flex Layout
         </a>
+        <a mat-button routerLink="login-required">
+          <mat-icon>account_circle</mat-icon>
+          Protected Page
+        </a>
       </div>
       <span class="flex-spacer"></span>
-      <a mat-button>
+      <a mat-button (click)='auth.logout()' *ngIf="(auth.stateChange$ | async) === 'loggedIn'">
         <mat-icon>input</mat-icon>
-        Sign Out
+        Log Out
       </a>
     </mat-toolbar>
     <div class="main-content">

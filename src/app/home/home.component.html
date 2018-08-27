@@ -1,4 +1,15 @@
 <h1 class="mat-h1">Home</h1>
+<div>
+  This starter project has the following features implemented:
+  <ul>
+    <li>Starter code base with Angular 6.1.4, Angular Material 6, Angular Flex Layout</li>
+    <li>Layout: Responsive navbar, Main content, Side nav drawer</li>
+    <li>Customized theme. See styles.scss</li>
+    <li>Routing</li>
+    <li>Login</li>
+    <li>Can be upgraded to future version of Angular easily</li>
+  </ul>
+</div>
 <mat-grid-list cols="2" rowHeight="350px">
   <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
     <mat-card class="dashboard-card">
