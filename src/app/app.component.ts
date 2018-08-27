@@ -9,6 +9,6 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'Angular Starter App';
 
-  constructor(private auth: AuthService) {
+  constructor(public auth: AuthService) {
   }
 }
