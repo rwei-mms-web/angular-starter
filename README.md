@@ -1,6 +1,6 @@
 # angular-starter
 Starter app that uses bare angular 6 + material 6 + flex layout. 
-This helps you to kick start your angular project and can be upgraded to future angular versions easily.
+This helps you kick start new angular project and can be upgraded to future angular versions easily.
 
 Angular: 6.1.4
 Angular Material: 6.4.6
